@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Radheya - Cybersecurity Professional</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #e2e8f0;
+      scroll-behavior: smooth;
+    }
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    nav.scrolled {
+      background: rgba(15, 23, 42, 0.98);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .nav-links a:hover {
+      color: #3b82f6;
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="grad"><stop offset="0%" style="stop-color:rgba(59,130,246,0.1)"/><stop offset="100%" style="stop-color:rgba(59,130,246,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23grad)"/><circle cx="800" cy="300" r="150" fill="url(%23grad)"/><circle cx="400" cy="700" r="120" fill="url(%23grad)"/></svg>');
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+    
+    .hero .subtitle {
+      font-size: 1.5rem;
+      color: #94a3b8;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+    
+    .hero .description {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    }
+    
+    /* Sections */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .about-image {
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      color: white;
+      margin: 0 auto;
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+    }
+    
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #cbd5e1;
+    }
+    
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .skill-tag {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #3b82f6;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    
+    .project-card {
+      background: linear-gradient(135deg, #1e293b, #334155);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+    }
+    
+    .project-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #f8fafc;
+    }
+    
+    .project-card p {
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .project-link:hover {
+      color: #8b5cf6;
+      transform: translateX(5px);
+    }
+    
+    
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .skill-card {
+      background: linear-gradient(135deg, #1e293b, #334155);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+    }
+    
+    .skill-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .skill-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #f8fafc;
+    }
+    
+    .stars {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.2rem;
+    }
+    
+    .star.filled {
+      color: #fbbf24;
+      filter: drop-shadow(0 0 3px rgba(251, 191, 36, 0.5));
+    }
+    
+    .skill-level {
+      color: #3b82f6;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    
+    .hackerrank-link {
+      text-align: center;
+    }
+    
+    /* Certificates Section */
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    
+    .certificate-card {
+      background: linear-gradient(135deg, #1e293b, #334155);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .certificate-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #10b981, #3b82f6);
+    }
+    
+    .certificate-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1);
+    }
+    
+    .certificate-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    
+    .certificate-icon {
+      font-size: 2rem;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #10b981, #3b82f6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    
+    .certificate-badge {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #10b981;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .certificate-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #f8fafc;
+      line-height: 1.3;
+    }
+    
+    .certificate-period {
+      color: #10b981;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    .certificate-description {
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .certificate-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #10b981;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .certificate-link:hover {
+      color: #3b82f6;
+      transform: translateX(5px);
+    }
+    
+    /* Contact Section */
+    .contact-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+    }
+    
+    .contact-item a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-item a:hover {
+      color: #3b82f6;
+    }
+    
+    /* Footer */
+    footer {
+      background: #0f172a;
+      text-align: center;
+      padding: 2rem;
+      color: #64748b;
+      border-top: 1px solid rgba(148, 163, 184, 0.1);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero .subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .contact-info {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Smooth scrolling offset for fixed nav */
+    html {
+      scroll-padding-top: 80px;
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="logo">Radheya</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Radheya</h1>
+      <p class="subtitle">Cybersecurity Professional</p>
+      <p class="description">
+        Second-year B.Tech CSE - Cybersecurity student at SRM College, passionate about ethical hacking, 
+        network security, and building secure digital solutions. Actively seeking opportunities to contribute 
+        to innovative cybersecurity projects.
+      </p>
+      <a href="#contact" class="cta-button">Get In Touch</a>
+    </div>
+  </section>
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Cybersecurity Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #111827 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        #about {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #fff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: titleGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from {
+                filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+            }
+            to {
+                filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+            }
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-image {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 250px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .about-image:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .about-image span {
+            font-size: 6rem;
+            z-index: 1;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .about-text {
+            color: white;
+            animation: slideInRight 0.8s ease-out 0.3s both;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .about-text p:hover {
+            opacity: 1;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 2rem 0;
+        }
+
+        .skill-tag {
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .skill-tag:hover::before {
+            left: 100%;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        .education-section {
+            margin-top: 2rem;
+        }
+
+        .education-title {
+            color: #60a5fa;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .education-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .education-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #3b82f6;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), transparent);
+            transition: width 0.5s ease;
+        }
+
+        .education-item:hover::before {
+            width: 100%;
+        }
+
+        .education-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .education-item strong {
+            color: #93c5fd;
+            font-size: 1.2rem;
+        }
+
+        .education-item .score {
+            color: #34d399;
+            font-weight: 700;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: floatUpDown 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes floatUpDown {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            #about {
+                padding: 2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .about-image {
+                height: 200px;
+            }
+            
+            .about-image span {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <span>🛡️</span>
+            </div>
+            <div class="about-text">
+                <p>
+                    I am a dedicated cybersecurity enthusiast currently pursuing my B.Tech in Computer Science Engineering 
+                    with a specialization in Cybersecurity at SRM College. My passion lies in ethical hacking, network security, 
+                    and developing robust security solutions.
+                </p>
+                <p>
+                    With hands-on experience in various programming languages and security tools, I'm committed to staying 
+                    at the forefront of cybersecurity innovations. I actively seek opportunities to apply my knowledge in 
+                    real-world scenarios and contribute to creating a safer digital environment.
+                </p>
+                
+                <div class="skills">
+                    <span class="skill-tag">Ethical Hacking</span>
+                    <span class="skill-tag">Network Security</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Cryptography</span>
+                    <span class="skill-tag">Web Security</span>
+                </div>
+                
+                <div class="education-section">
+                    <h3 class="education-title">🎓 Education</h3>
+                    <ul class="education-list">
+                        <li class="education-item">
+                            <strong>B.Tech in CSE - Cybersecurity</strong><br>
+                            SRM Institute of Science and Technology, Kattankulathur (2023–2027)<br>
+                            CGPA: <span class="score">7.92</span> (as of 4th Semester, Completed 2nd Year)
+                        </li>
+                        <li class="education-item">
+                            <strong>Higher Secondary (12th Grade)</strong><br>
+                            ABEI, Attur Bharathiyar Educational Institution (2021–2023)<br>
+                            Score: <span class="score">87%</span>
+                        </li>
+                        <li class="education-item">
+                            <strong>Secondary Education (10th Grade)</strong><br>
+                            ABEI, Attur Bharathiyar Educational Institution (2021)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+  <section id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Password Secure Manager</h3>
+        <p>
+          A comprehensive Java application designed to securely store and generate passwords. Features AES-256 encryption, 
+          multi-factor authentication, and an intuitive user interface for enhanced security management.
+        </p>
+        <a href="https://github.com/radheya2503/Password-Secure-Manager" target="_blank" class="project-link">
+          View on GitHub →
+        </a>
+      </div>
+      
+      <div class="project-card">
+        <h3>Advanced News Authenticator</h3>
+        <p>
+          AI-powered fake news detection system using LSTM neural networks and Flask framework. Achieves 95%+ accuracy 
+          on the Kaggle Fake News dataset with a modern web interface built using HTML, CSS, and JavaScript.
+        </p>
+        <a href="https://github.com/abhi-0308/Advanced-News-Authenticator" target="_blank" class="project-link">
+          View on GitHub →
+        </a>
+      </div>
+      
+      <div class="project-card">
+        <h3>Drug Management System</h3>
+        <p>
+          Robust pharmacy inventory management tool built with Java, featuring real-time stock tracking, advanced search 
+          capabilities, and secure authentication. Integrated with MySQL database using JDBC for reliable data management.
+        </p>
+        <a href="https://github.com/radheya2503/DrugsManagementSystem" target="_blank" class="project-link">
+          View on GitHub →
+        </a>
+      </div>
+      
+      <div class="project-card">
+        <h3>Crop & Carry</h3>
+        <p>
+          Full-stack farmer-to-customer management platform developed using Python, MySQL, HTML, and CSS. 
+          Facilitates crop listing, order management, and real-time inventory updates for agricultural businesses.
+        </p>
+        <a href="https://github.com/radheya2503/Crop-and-Carry" target="_blank" class="project-link">
+          View on GitHub →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills & HackerRank Badges</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🐍</div>
+        <h3>Python</h3>
+        <div class="stars">
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+        </div>
+        <p class="skill-level">5 Stars</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚡</div>
+        <h3>C++</h3>
+        <div class="stars">
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+        </div>
+        <p class="skill-level">5 Stars</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">☕</div>
+        <h3>Java</h3>
+        <div class="stars">
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+        </div>
+        <p class="skill-level">5 Stars</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🗄️</div>
+        <h3>SQL</h3>
+        <div class="stars">
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+        </div>
+        <p class="skill-level">5 Stars</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🧩</div>
+        <h3>Problem Solving</h3>
+        <div class="stars">
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+          <span class="star filled">⭐</span>
+        </div>
+        <p class="skill-level">5 Stars</p>
+      </div>
+    </div>
+    <div class="hackerrank-link">
+      <a href="https://www.hackerrank.com/profile/ra1363" target="_blank" class="cta-button">
+        🔗 Visit my HackerRank Profile
+      </a>
+    </div>
+  </section>
+
+  <section id="certificates">
+    <h2 class="section-title">Certificates & Achievements</h2>
+    <div class="certificates-grid">
+      <div class="certificate-card">
+        <div class="certificate-header">
+          <div class="certificate-icon">🏆</div>
+          <div class="certificate-badge">NPTEL</div>
+        </div>
+        <h3>Programming in Java</h3>
+        <p class="certificate-period">Jul – Oct 2024</p>
+        <p class="certificate-description">Covered core Java concepts, OOP principles, and practical exercises.</p>
+        <a href="https://drive.google.com/file/d/1vPZK-83JB-bkUiclvscI-WgSunv-eG0k/view?usp=drive_link" target="_blank" class="certificate-link">
+          View Certificate →
+        </a>
+      </div>
+      
+      <div class="certificate-card">
+        <div class="certificate-header">
+          <div class="certificate-icon">💻</div>
+          <div class="certificate-badge">Udemy</div>
+        </div>
+        <h3>C Programming for Beginners</h3>
+        <p class="certificate-period">25.5 hrs, Nov 2023</p>
+        <p class="certificate-description">Introduced C syntax, logic building, and hands-on coding tasks.</p>
+        <a href="https://drive.google.com/file/d/1kHoGYau70ZhtWmVz5OzAsp5W11zucWVD/view?usp=drive_link" target="_blank" class="certificate-link">
+          View Certificate →
+        </a>
+      </div>
+      
+      <div class="certificate-card">
+        <div class="certificate-header">
+          <div class="certificate-icon">🗄️</div>
+          <div class="certificate-badge">Scaler</div>
+        </div>
+        <h3>DBMS Course</h3>
+        <p class="certificate-period">Completed March 2025</p>
+        <p class="certificate-description">Focused on RDBMS, SQL, transactions, and normalization techniques.</p>
+        <a href="https://drive.google.com/file/d/1HO2vGcdCyYgWvdhHFjx5jfUvCTrbonze/view?usp=drive_link" target="_blank" class="certificate-link">
+          View Certificate →
+        </a>
+      </div>
+      
+      <div class="certificate-card">
+        <div class="certificate-header">
+          <div class="certificate-icon">🛡️</div>
+          <div class="certificate-badge">Udemy</div>
+        </div>
+        <h3>Ethical Hacking</h3>
+        <p class="certificate-period">15.5 hrs, Feb 2025</p>
+        <p class="certificate-description">Covered penetration testing, reconnaissance, and security tools.</p>
+        <a href="https://drive.google.com/file/d/1Il5kMkpSknxdg_-DOYbzL-kO68Mhf6O2/view?usp=drive_link" target="_blank" class="certificate-link">
+          View Certificate →
+        </a>
+      </div>
+      
+      <div class="certificate-card">
+        <div class="certificate-header">
+          <div class="certificate-icon">🔒</div>
+          <div class="certificate-badge">NPTEL</div>
+        </div>
+        <h3>Information Security – Secure System Engineering</h3>
+        <p class="certificate-period">Jan – Mar 2025</p>
+        <p class="certificate-description">Explored secure system design, access control models, and risk analysis.</p>
+        <a href="https://drive.google.com/file/d/1c1m69ARnwLDDZT8-9fLVMVF8TXDov_nK/view?usp=drive_link" target="_blank" class="certificate-link">
+          View Certificate →
+        </a>
+      </div>
+      
+      <div class="certificate-card">
+        <div class="certificate-header">
+          <div class="certificate-icon">🎯</div>
+          <div class="certificate-badge">Forage</div>
+        </div>
+        <h3>Cybersecurity Analyst Job Simulation</h3>
+        <p class="certificate-period">Mar 2025</p>
+        <p class="certificate-description">Completed IAM tasks, including platform integration and strategy assessment.</p>
+        <a href="https://drive.google.com/file/d/1YYoGjOnHuoCAFr-nZABAOzZKgWQEugRl/view?usp=sharing" target="_blank" class="certificate-link">
+          View Certificate →
+        </a>
+      </div>
+      
+      <div class="certificate-card">
+        <div class="certificate-header">
+          <div class="certificate-icon">🔥</div>
+          <div class="certificate-badge">Palo Alto</div>
+        </div>
+        <h3>Palo Alto Cybersecurity Foundation</h3>
+        <p class="certificate-period">Palo Alto Networks</p>
+        <p class="certificate-description">Covered network security principles, firewalls, and prevention techniques.</p>
+        <a href="https://drive.google.com/file/d/1bgJv6HNUGmcqD1cKJEk5VVXXYRRpmrmB/view?usp=drive_link" target="_blank" class="certificate-link">
+          View Certificate →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="contact-content">
+      <p>
+        I'm always excited to discuss cybersecurity, collaborate on projects, or explore internship opportunities. 
+        Feel free to reach out!
+      </p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <a href="mailto:radheya2503@gmail.com">radheya2503@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💼</div>
+          <a href="https://linkedin.com/in/radheya" target="_blank">LinkedIn Profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Radheya. All rights reserved. | Cybersecurity Professional</p>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
